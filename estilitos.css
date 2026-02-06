@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: linear-gradient(180deg, #1a140e, #2a2218);
+  color: #e6d8b8;
+  text-align: center;
+  padding: 30px;
+  overflow-x: hidden;
+}
+
+
+
+
+
+h1 {
+  margin-bottom: 15px;
+  color: rgb(249, 251, 131);
+}
+
+h2 {
+  margin: 20px 0;
+  font-weight: normal;
+  color:rgb(249, 251, 131);
+}
+
+.temas {
+  margin: 20px 0;
+}
+
+.temas a {
+  text-decoration: none;
+  color: #2a2218;
+  font-weight: bold;
+  margin: 0 18px;
+  transition: all 0.3s ease;
+}
+
+.temas a:hover {
+  color: #2a2218;
+  text-decoration: underline;
+}
+
+.texto {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: justify;
+  line-height: 1.7;
+}
+
+.historia {
+  margin-top: 40px;
+}
+
+.momento {
+  display: inline-block;
+  width: 45%;
+  max-width: 520px;
+  margin: 25px;
+  vertical-align: top;
+}
+
+.foto {
+  background: #fffaf3;
+  padding: 12px;
+  border: 2px solid #d8b96a;
+  box-shadow: 0 8px 20px rgba(107, 79, 44, 0.25);
+}
+
+.foto img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.momento p {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #4a3b2a;
+}
+
+.flecha {
+  font-size: 2.2rem;
+  margin: 0 12px;
+  color: #c9a24d;
+}
+
+.foto:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+.temas {
+  margin: 30px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  margin: 10px;
+  text-decoration: none;
+  color: #4a3b2a;
+  background: linear-gradient(135deg, #f5e6c8, #d8b96a);
+  border: 2px solid #c9a24d;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 6px 15px rgba(107, 79, 44, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #d8b96a, #f5e6c8);
+  color: #3b2d1f;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(107, 79, 44, 0.35);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(107, 79, 44, 0.25);
+}
+.estrellas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.estrellas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, #e6d8b8 99%, transparent),
+    radial-gradient(1px 1px at 25% 60%, #d8b96a 99%, transparent),
+    radial-gradient(1px 1px at 40% 30%, #e6d8b8 99%, transparent),
+    radial-gradient(1px 1px at 55% 80%, #d8b96a 99%, transparent),
+    radial-gradient(1px 1px at 70% 40%, #e6d8b8 99%, transparent),
+    radial-gradient(1px 1px at 85% 65%, #d8b96a 99%, transparent);
+  background-size: 300px 300px;
+}
+.estrellas::after {
+  content: "";
+  position: absolute;
+  inset: -100%;
+  background-image:
+    radial-gradient(1px 1px at 15% 10%, #e6d8b8 99%, transparent),
+    radial-gradient(1px 1px at 35% 30%, #d8b96a 99%, transparent),
+    radial-gradient(1px 1px at 55% 50%, #e6d8b8 99%, transparent),
+    radial-gradient(1px 1px at 75% 70%, #d8b96a 99%, transparent);
+  background-size: 250px 250px;
+  animation: estrellasBajan 30s linear infinite;
+}
+@keyframes fugaz {
+  0% {
+    opacity: 0;
+    transform: translate(-20%, -20%);
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+    transform: translate(40%, 40%);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fugaz {
+  position: fixed;
+  width: 3px;
+  height: 3px;
+  background: #e6d8b8;
+  box-shadow: 0 0 6px #d8b96a;
+  border-radius: 50%;
+  animation: fugaz 4s ease-in-out infinite;
+}
+body {
+  opacity: 0;
+  animation: aparecer 0.8s ease forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+  }
+}
+
+body.salida {
+  animation: desaparecer 0.6s ease forwards;
+}
+
+@keyframes desaparecer {
+  to {
+    opacity: 0;
+  }
+}
+.contador-bonito {
+  margin: 60px auto;
+  padding: 35px 45px;
+  border-radius: 20px;
+  border: 2px solid #d8b96a;
+  background: rgba(30, 24, 18, 0.75);
+  box-shadow: 0 0 35px rgba(216,185,106,0.25);
+  width: fit-content;
+  backdrop-filter: blur(6px);
+}
+
+.contador-bonito h2 {
+  margin-bottom: 25px;
+  color: #d8b96a;
+  letter-spacing: 1px;
+}
+
+.tiempo-cajas {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.caja {
+  width: 90px;
+  height: 100px;
+  background: linear-gradient(180deg, #2a2218, #1f1a14);
+  border: 2px solid #d8b96a;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.6);
+  animation: flotar 3s ease-in-out infinite;
+}
+
+.caja span {
+  font-size: 2.2rem;
+  color: #e6d8b8;
+  font-weight: bold;
+}
+
+.caja small {
+  margin-top: 5px;
+  color: #d8b96a;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+@keyframes flotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
